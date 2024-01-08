@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { updateName, updateCost, addCar } from "../store/store";
-import { resetForm } from "../store/actions";
+
 function CarForm() {
   const { name, cost } = useSelector((state) => state.form);
   const dispatch = useDispatch();
@@ -11,10 +11,10 @@ function CarForm() {
     e.preventDefault();
     console.log(name, cost);
     dispatch(addCar({ name, cost }));
-    dispatch(resetForm());
+    // dispatch(resetForm());
   };
   return (
-    <div className="car-form panel">
+    <div className="car-form  panel">
       <h4 className="subtitle is-3">Add Car</h4>
       <form onSubmit={handleSubmitUpdate}>
         <div className="field-group">

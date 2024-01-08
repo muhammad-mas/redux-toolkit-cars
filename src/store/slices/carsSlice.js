@@ -3,22 +3,22 @@ import { resetForm } from "../actions";
 const carsSlice = createSlice({
   name: "cars",
   initialState: {
-    cars: [],
+    data: [],
     searchTerm: "",
   },
   reducers: {
     addCar(state, action) {
-      state.cars.push({ ...action.payload, id: nanoid(5) });
+      state.data.push({ ...action.payload, id: nanoid(5) });
     },
     updateSearchTerm(state, action) {
       state.searchTerm = action.payload;
     },
     removeCar(state, action) {
       const carId = action.payload;
-      state.cars = state.cars.filter((car) => car.id !== carId);
+      state.data = state.data.filter((car) => car.id !== carId);
     },
-    resetCars(state) {
-      state.cars = [];
+    resetData(state) {
+      state.data = [];
     },
     resetSearchTerm(state) {
       state.searchTerm = "";
